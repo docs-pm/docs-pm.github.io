@@ -1,0 +1,196 @@
+body {
+    margin: 0; margin-bottom: 90px;
+    overflow: overflow; overflow-x: hidden;
+    background-color: #FDFDFD;
+    }
+
+b { color: #333 }
+p { text-align: justify; line-height: 22px }
+ul { list-style-type: square }
+
+a {
+    color: #222;
+    text-decoration: underline }
+    a:active, { color: #23aeff }
+    a:hover, a:focus, a c:hover { color: #018fe2 }
+
+pre {
+    font-family: Droid Sans Mono;
+    font-size: 12px;
+    line-height: 17px;
+    white-space: pre-wrap;
+    padding: 16px;
+    margin-left: -8px;
+    margin-right: -8px;
+    border: 1px solid #888;
+    box-shadow: 0px 13px 14px -12px #ADADAD }
+    blocks pre:hover { cursor: pointer }
+
+h1, h2 {
+    color: #222;
+    font-weight: 100;
+    font-variant: small-caps;
+    font-size: 25px;
+    font-style: italic;
+    font-family: Times New Roman;
+    margin: -8px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 12px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: white;
+    border: 1px solid #888;
+    box-shadow: 0px 6px 12px -6px #AAA;
+    }
+
+h1 {
+    font-style: normal;
+    margin-right: -8px; margin-left: -8px; margin-top: 25px; margin-bottom: 40px;
+    padding-top: 18px; padding-bottom: 18px;
+    background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(245,245,245)),
+	    color-stop(0.1, rgb(250,250,250)),
+	    color-stop(1, rgb(255,255,255))
+        );
+    }
+    h1:after {
+        content: 'docs.pm';
+        color: #555;
+        float: right;
+        font-size: 12px;
+        font-style: italic;
+        font-variant: normal;
+        font-family: Droid Sans;
+        padding: 0px;
+        padding-top: 28px;
+        }
+    
+h3 {
+    color: #111;
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    font-family: Ubuntu Mono;
+    padding:18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 30px;
+    margin-right: -8px;
+    margin-left: -8px;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    }
+    h3 bind {
+        font-size: 12px;
+        font-weight: 100;
+        }
+
+h {
+    color: #111;
+    font-size: 19px;
+    font-weight: 100;
+    font-family: Ubuntu Light;
+    font-style: italic;
+    border-left: 3px solid #AAA;
+    margin-top: 50px;
+    padding-left: 20px;
+    }
+
+c { color: #111; font-size: 18px; font-family: Ubuntu Mono }
+
+page {
+    font-family: Ubuntu Light;
+    width: 620px;
+    padding: 100px;
+    padding-top: 20px;
+    padding-bottom: 80px;
+    margin: auto;
+    background-color: white;
+    border: 1px solid #888;
+    box-shadow: 0px 14px 18px -12px #777;
+    }
+
+note {
+    color: #111;
+    font-size: 18px;
+    font-style: italic;
+    font-family: Times New Roman;
+    text-align: justify;
+    line-height: 26px;
+    letter-spacing: 0.7pt;
+    padding: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: -8;
+    margin-top: 20px;
+    border: 1px solid #888;
+    box-shadow: inset 0px 0px 20px #EEE;
+    }
+    note p {
+        line-height: 26px;
+        }
+    note c {
+        font-weight: 100; font-size: 18px;
+        }
+    note:before {
+        color: #888;
+        content: '*';
+        font-size: 35px;
+        font-weight: 900;
+        font-style: normal;
+        font-family: Droid Sans;
+        line-height: 0;
+        margin-right: 10px;
+        vertical-align: -12px;
+        }
+
+arg {
+    margin-top: 14px;
+    margin-right: -8px;
+    margin-left: -8px;
+    border: 1px solid #888;
+    box-shadow: 0px 13px 14px -12px #ADADAD;
+    }
+    arg p {
+        display: none;
+        font-family: Droid Sans;
+        font-size: 15px;
+        margin: 0;
+        padding: 12px;
+        border-top: 1px solid #AAA;
+        }
+    arg bar {
+        font-size: 16px;
+        font-weight: 900;
+        background-color: #FDFDFD;
+        padding: 8px;
+        padding-top: 5px;
+        }
+        arg bar:hover { cursor: pointer }
+    arg subtitle {
+        font-weight: 100;
+        font-style: italic;
+        }
+    arg type {
+        float: right;
+        font-weight: 100;
+        font-style: normal;
+        }
+    arg type:before { content: 'type:' }
+
+blocks p { display: none }
+
+stamp {
+    margin: 50px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    }
+
+arg, bar { font-family: Ubuntu Mono }
+scroll, page, page h, stamp, note, arg, arg bar, args h { display: block }
+h3 bind, arg type:before, ul { color: #999 }

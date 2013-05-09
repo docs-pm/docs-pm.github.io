@@ -1,0 +1,451 @@
+<html><head>
+
+    <meta name="viewport" id="viewport"
+        content="width=device-width, target-densitydpi=device-dpi,
+        initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+
+<title>SL4A UI Facade</title>
+<script type="text/javascript" src="/site/hilighter/sh_main.js"></script>
+<script type="text/javascript" src="/site/hilighter/lang/sh_python.js"></script>
+<link rel="stylesheet" href="/hilighter/css/sh_print.css">
+<link rel='stylesheet' href='/site/main.css'>
+</head><body>
+
+
+
+<page> <h1>SL4A: The User Interface Facade</h1>
+
+<h><a href=#introducingthefacade>Introducing the Facade</a></h>
+<p>A quick introduction to the User Interface Facade.</p>
+
+<h><a href=#dialogsalightpass>Dialogs: A Light Pass</a></h>
+<p>A brief overview of Android's native dialogs.</p>
+
+<h><a href=#theapireference>The API Reference</a></h>
+<p>A complete guide to the SL4A User Interface Facade's API.</p>
+
+<h><a href=#appendixa>Appendix A: Managing Menus</a></h>
+<p>An quick guide to adding context and options menus to your applications.</p>
+
+<h><a href=#appendixb>Appendix B: Quid Pro Quo</a></h>
+<p>A quick guide to using the standard dialogs, dialogs that block and wait for user input.</p>
+
+<h><a href=#docinfo>Document Information</a></h>
+<p>Maintenance, providence, sponsorship and licensing details for this document.</p>
+
+</page>
+
+
+
+<page link=introducingthefacade> <h2>Introducing the Facade</h2>
+
+<p>The User Interface Facade is generally used to create native dialogs, such as alerts, spinners and progress bars. It supports a range of dialogs for getting user input, such as password input boxes and date pickers.</p>
+
+<p>The facade also provides a couple of convenience methods, <a><c>dialogGetInput</c></a> and <a><c>dialogGetPassword</c></a>, that simplify managing common dialogs.</p>
+
+<note>The User Interface Facade also hosts the <a><c>webViewShow</c></a> and <a><c>fullShow</c></a> methods. The <c>webViewShow</c> method is obviously used to create <a>webviews</a>. The <c>fullShow</c> method is used with the experimental <a>FullScreenUI Facade</a>, to build more complex, native user interfaces.
+<br><br>
+Only the APIs to these functions are documented here. See the relevant docs for more information on how to use them.
+</note>
+
+</page>
+
+
+
+<page link=dialogsalightpass> <h2>Dialogs: A Light Pass</h2>
+
+<p>The normal flow when using dialogs is to first create the appropriate dialog object, then set any additional features it may have, then call <a><c>dialogShow</c></a> to display the dialog to the user.</p>
+
+<p>Once it's displayed, there are functions for getting results from a dialog and for dismissing it. You can also update progress dialogs while they're being rendered.</p>
+
+<h>Creating Dialog Objects</h>
+
+<p>You create a dialogue object using one of the following calls.</p>
+
+<ul>
+    <li><a href=#dialogcreatealert><c>dialogCreateAlert</c></a></li>
+    <li><a><c>dialogCreateInput</c></a></li>
+    <li><a><c>dialogCreatePassword</c></a></li>
+    <li><a><c>dialogCreateDatePicker</c></a></li>
+    <li><a><c>dialogCreateSeekBar</c></a></li>
+    <li><a><c>dialogCreateSpinnerProgress</c></a></li>
+    <li><a><c>dialogCreateHorizontalProgress</c></a></li>
+</ul>
+
+<h>Customising Dialog Objects</h>
+
+<p>You set any additional features with the following calls.</p>
+
+<ul>
+    <li><a><c>dialogSetItems</c></a></li>
+    <li><a><c>dialogSetMultiChoiceItems</c></a></li>
+    <li><a><c>dialogSetSingleChoiceItems</c></a></li>
+    <li><a><c>dialogSetPositiveButtonText</c></a></li>
+    <li><a><c>dialogSetNeutralButtonText</c></a></li>
+    <li><a><c>dialogSetNegativeButtonText</c></a></li>
+    <li><a><c>dialogSetMaxProgress</c></a></li>
+</ul>
+
+<h>Rendering Dialog Objects</h>
+
+<p>You display the dialog using <a><c>dialogShow</c></a>.</p>
+
+<p>The <a><c>dialogSetCurrentProgress</c></a> method allows you to update the progress bar of a progress dialog while it's being rendered.</p>
+
+<p>You call <a><c>dialogDismiss</c></a> to dismiss a dialog.</p>
+
+<h>Getting the Results</h>
+
+<p>You can normally get any results using <a><c>dialogGetResponse</a></c>, which blocks until the user responds to the dialog.</p>
+
+<p>For certain types of dialog, you may instead have to use the <a><c>eventPoll</a></c> method of the <a>Events Facade</a> to wait for a dialog event. Some dialogs, such as menus, are persistant features of an application, potentially generating multiple events over time, so they must be managed through the Events Facade.</p>
+
+<p>Whenever you create single-choice dialogs (radio buttons) or multi-choice dialogs (checklists), you must pass in a list of choices for the user to select from. You can find out which choices were selected using the <a><c>dialogGetSelectedItems</c></a> method. This method returns a list of integers, which map to the indices of the selected items in the list of choices you passed in. Obviously, for a single-choice dialog, there will only be one.</p>
+
+<note>There is only ever one instance of a dialog. Any <c>dialogCreate*</c> call will cause any existing dialog to be destroyed.
+</note>
+
+<note>Not every <c>dialogSet*</c> function is relevant to every type of dialog. For example, <c>dialogSetMaxProgress</c> only applies to progress dialogs.
+</note>
+
+<note>An alert dialog may have a message or items, not both. If both are set, the message will be ignored.
+</note>
+</page>
+
+
+
+<page link=theapireference> <h2>The API Reference</h2>
+
+<ul>
+    <li><a href=#addcontextmenuitem><c>addContextMenuItem</c></a></li>
+    <li><a href=#addoptionsmenuitem><c>addOptionsMenuItem</c></a></li>
+    <li><a href=#clearcontextmenu><c>clearContextMenu</c></a></li>
+    <li><a href=#clearoptionsmenu><c>clearOptionsMenu</c></a></li>
+    <li><a href=#dialogcreatealert><c>dialogCreateAlert</c></a></li>
+    <li><a><c>dialogCreateDatePicker</c></a></li>
+    <li><a><c>dialogCreateHorizontalProgress</c></a></li>
+    <li><a><c>dialogCreateInput</c></a></li>
+    <li><a><c>dialogCreatePassword</c></a></li>
+    <li><a><c>dialogCreateSeekBar</c></a></li>
+    <li><a><c>dialogCreateSpinnerProgress</c></a></li>
+    <li><a><c>dialogCreateTimePicker</c></a></li>
+    <li><a><c>dialogDismiss</c></a></li>
+    <li><a><c>dialogGetInput</c></a></li>
+    <li><a><c>dialogGetPassword</c></a></li>
+    <li><a><c>dialogGetResponse</c></a></li>
+    <li><a><c>dialogGetSelectedItems</c></a></li>
+    <li><a><c>dialogSetCurrentProgress</c></a></li>
+    <li><a><c>dialogSetItems</c></a></li>
+    <li><a><c>dialogSetMaxProgress</c></a></li>
+    <li><a><c>dialogSetMultiChoiceItems</c></a></li>
+    <li><a><c>dialogSetNegativeButtonText</c></a></li>
+    <li><a><c>dialogSetNeutralButtonText</c></a></li>
+    <li><a><c>dialogSetPositiveButtonText</c></a></li>
+    <li><a><c>dialogSetSingleChoiceItems</c></a></li>
+    <li><a><c>dialogShow</c></a></li>
+    <li><a><c>fullDismiss</c></a></li>
+    <li><a><c>fullKeyOverride</c></a></li>
+    <li><a><c>fullQuery</c></a></li>
+    <li><a><c>fullQueryDetail</c></a></li>
+    <li><a><c>fullSetList</c></a></li>
+    <li><a><c>fullSetProperty</c></a></li>
+    <li><a><c>fullSetTitle</c></a></li>
+    <li><a><c>fullShow</c></a></li>
+    <li><a><c>webViewShow</c></a></li>
+</ul>
+</page>
+
+
+
+<page link=addcontextmenuitem> <h3 bind=droid.>addContextMenuItem</h3>
+
+<p>This method is used to add a new item to your application's <a>context menu</a>. Context menus are used primarily with <a>webviews</a> and are managed through the <a>Events Facade</a>.</p>
+
+<args>
+<h>Required Arguments</h>
+<arg maintitle=1st subtitle=label type=string>The text that's displayed on the menu item when it's rendered.</arg>
+<arg maintitle=2nd subtitle=event type=string>A name for the <a>event</a> that will be generated whenever the user clicks on the menu item.</arg>
+<h>Optional Arguments</h>
+<arg maintitle=3rd subtitle=data type=object>Any data that's to be passed along with any <a>event</a> that's generated.</arg>
+</args>
+</page>
+
+
+
+<page link=addoptionsmenuitem> <h3 bind=droid.>addOptionsMenuItem</h3>
+
+<p>This method adds a new item to your application's <a>options menu</a>. Option menus are managed through the <a>Events Facade</a>.</p>
+
+<args>
+<h>Required Arguments</h>
+<arg maintitle=1st subtitle=label type=string>The text that's displayed on the menu item when it's rendered.</arg>
+<arg maintitle=2nd subtitle=event type=string>A name for the <a>event</a> that will be generated whenever the user clicks on the menu item.</arg>
+<h>Optional Arguments</h>
+<arg maintitle=3rd subtitle=data type=object>Any data that's to be passed along with any <a>event</a> that's generated.</arg>
+<arg maintitle=4th subtitle=icon type=string>The Android <a>system menu icon</a> to use when the menu item is rendered.</arg>
+</args>
+
+<h>Example Code</h>
+
+<blocks>
+<p>Start by creating the standard <c>droid</c> object.</p>
+
+<block lang=python>
+import android
+droid = android.Android()
+</block>
+
+<p>Next, add a menu item called <c>Yes</c> with a <c>star_on</c> icon. Have it generate <c>yes</c> events when it's clicked. Note that <c>yes</c> events will carry the string <c>'You Pressed Yes'</c> as data.</p>
+
+<block lang=python>
+droid.addOptionsMenuItem('Yes', 'yes' , 'You Pressed Yes', 'star_on')
+</block>
+
+<p>Create a couple more menu items, with different parameters.</p>
+
+<block lang=python>
+droid.addOptionsMenuItem('No', 'no', 'You Pressed No', 'star_off')
+droid.addOptionsMenuItem('Quit', 'kill', None, 'ic_menu_revert')
+</block>
+
+<p>Now set up a loop, iterating once for each event. If the event's name is <c>'kill'</c>, the program ends. If the event's name is anything else, the very last line will print the event's data, either <c>'You Pressed Yes'</c> or <c>'You Pressed No'</c>.</p>
+
+<block lang=python>
+while True:
+    res = droid.eventWait().result
+    if res['name'] == 'kill': break
+    print res['data']
+</block>
+
+</blocks>
+</page>
+
+
+
+<page link=clearcontextmenu> <h3 bind=droid.>clearContextMenu</h3>
+<p>This method simply removes all items previously added to your application's <a>context menu</a>, complementing <a href=#addcontextmenuitem><c>addContextMenuItem</c></a>. It takes no arguments.</p>
+</page>
+
+
+
+<page link=clearoptionsmenu> <h3 bind=droid.>clearOptionsMenu</h3>
+<p>This method simply removes all items previously added to your application's <a>options menu</a>, complementing <a href=#addoptionsmenuitem><c>addOptionsMenuItem</c></a>. It takes no arguments.</p>
+</page>
+
+
+
+<page link=dialogcreatealert> <h3 bind=droid.>dialogCreateAlert</h3>
+<p>This method creates an <a>alert dialog</a>. You can set a title and a message for the dialog when you call this method, and you can define a set of simple buttons for the user to respond with.</p>
+
+<args>
+<h>Optional Arguments</h>
+<arg maintitle=1st subtitle=title type=string>The title to display on the alert box.</arg>
+<arg maintitle=2nd subtitle=message type=string>The message to display in the alert box</arg>
+</args>
+
+<h>Example Code</h>
+
+<blocks>
+
+<p>Start by creating the standard <c>droid</c> object.</p>
+
+<block lang=python>
+import android
+droid = android.Android()
+</block>
+
+<p>Now you can use the <c>dialogCreateAlert</c> method to create an alert dialog with the title <c>'I like swords.'</c> and the message <c>'Do you like swords?'</c>.</p>
+
+<block lang=python>
+droid.dialogCreateAlert('I like swords.', 'Do you like swords?')
+</block>
+
+<p>This is a good point to quickly set some text for a couple of buttons, before calling <c>dialogShow</c> to render the alert dialog.</p>
+
+<block lang=python>
+droid.dialogSetPositiveButtonText('Yes')
+droid.dialogSetNegativeButtonText('No')
+droid.dialogShow()
+</block>
+
+<p>Calling <c>dialogGetResponse</c> will block execution until the user responds to the dialog. Then <c>dialogDismiss</c> is then called, ensuring that the alert is actually dismissed, as users can potentially cancel an alert dialog without entering anything.</p>
+
+<p>Note that only the value of the <c>result</c> attribute is assigned to <c>response</c>.</p>
+
+<block lang=python>
+response = droid.dialogGetResponse().result
+droid.dialogDismiss()
+</block>
+
+<p>The response object, a dictionary, has different keys, depending on what the user did.</p>
+
+<p>If <c>response.has_key('which')</c>, then one of the buttons was pressed. The value of <c>response['which']</c> will be either <c>'positive'</c> or <c>'negative'</c>, depending on which button that was.</p>
+
+<p>If the response object has a key called <c>'canceled'</c>, then the user dismissed the dialog without inputting anything. The word <i>canceled</i> is spelt incorrectly, but that is the required spelling.</p> <!-- TODO report bug ( https://code.google.com/p/android-scripting/issues/list ) -->
+
+<block lang=python>
+if response.has_key('which'):
+    
+    result = response['which']
+    
+    if result == "positive": print 'Yay! I like swords too!'
+    elif result == "negative": print 'Oh. How sad.'
+
+elif response.has_key('canceled'): print 'Surely you know if you like swords?'
+else: print 'Unknown response:', response
+</block>
+
+<p></p>
+
+</blocks>
+</page>
+
+
+
+<page link=dialogcreatedatepicker> <h3 bind=droid.>dialogCreateDatePicker</h3>
+
+<p>This method creates a <a>date picker dialog</a>. You can set the date that the dialog will begin at, otherwise it will default to January 1st 1970.</p>
+
+<args>
+<h>Optional Arguments</h>
+<arg maintitle=1st subtitle=year type=int>Default = 1970</arg> 
+<arg maintitle=2nd subtitle=month type=int>Default = 1</arg> 
+<arg maintitle=3rd subtitle=day type=int>Default = 1</arg>
+</args>
+
+</page>
+
+
+
+<page>
+dialogCreateHorizontalProgress	Create a horizontal progress dialog. 
+title (String) (optional) 
+message (String) (optional) 
+maximum progress (Integer) (default=100)
+dialogCreateInput	Create a text input dialog. 
+title (String) title of the input box (default=Value) 
+message (String) message to display above the input box (default=Please enter value:) 
+defaultText (String) text to insert into the input box (optional) 
+inputType (String) type of input data, ie number or text (optional) 
+For inputType, see InputTypes. Some useful ones are text, number, and textUri. Multiple flags can be supplied, seperated by "|", ie: "textUri|textAutoComplete"
+dialogCreatePassword	Create a password input dialog. 
+title (String) title of the input box (default=Password) 
+message (String) message to display above the input box (default=Please enter password:)
+dialogCreateSeekBar	Create seek bar dialog. 
+starting value (Integer) (default=50) 
+maximum value (Integer) (default=100) 
+title (String) 
+message (String) 
+Will produce "dialog" events on change, containing:
+"progress" - Position chosen, between 0 and max
+"which" = "seekbar"
+"fromuser" = true/false change is from user input
+Response will contain a "progress" element.
+dialogCreateSpinnerProgress	Create a spinner progress dialog. 
+title (String) (optional) 
+message (String) (optional) 
+maximum progress (Integer) (default=100)
+dialogCreateTimePicker	Create time picker dialog. 
+hour (Integer) (default=0) 
+minute (Integer) (default=0) 
+is24hour (Boolean) Use 24 hour clock (default=false)
+dialogDismiss	Dismiss dialog.
+dialogGetInput	Queries the user for a text input. 
+title (String) title of the input box (default=Value) 
+message (String) message to display above the input box (default=Please enter value:) 
+defaultText (String) text to insert into the input box (optional) 
+The result is the user's input, or None (null) if cancel was hit. 
+Example (python)
+ import android
+ droid=android.Android()
+ 
+ print droid.dialogGetInput("Title","Message","Default").result
+ 
+dialogGetPassword	Queries the user for a password. 
+title (String) title of the password box (default=Password) 
+message (String) message to display above the input box (default=Please enter password:)
+dialogGetResponse	Returns dialog response.
+dialogGetSelectedItems	This method provides list of items user selected. 
+returns: (Set) Selected items
+dialogSetCurrentProgress	Set progress dialog current value. 
+current (Integer)
+dialogSetItems	Set alert dialog list items. 
+items (JSONArray) 
+This effectively creates list of options. Clicking on an item will immediately return an "item" element, which is the index of the selected item.
+dialogSetMaxProgress	Set progress dialog maximum value. 
+max (Integer)
+dialogSetMultiChoiceItems	Set dialog multiple choice items and selection. 
+items (JSONArray) 
+selected (JSONArray) list of selected items (optional) 
+This creates a list of check boxes. You can select multiple items out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use dialogGetSelectedItems() to find out what was selected.
+dialogSetNegativeButtonText	Set alert dialog button text. 
+text (String)
+dialogSetNeutralButtonText	Set alert dialog button text. 
+text (String)
+dialogSetPositiveButtonText	Set alert dialog positive button text. 
+text (String)
+dialogSetSingleChoiceItems	Set dialog single choice items and selected item. 
+items (JSONArray) 
+selected (Integer) selected item index (default=0) 
+This creates a list of radio buttons. You can select one item out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use dialogGetSelectedItems() to find out what was selected.
+dialogShow	Show dialog.
+fullDismiss	Dismiss Full Screen.
+fullKeyOverride	Override default key actions 
+keycodes (JSONArray) List of keycodes to override 
+enable (Boolean) Turn overriding or off (default=true) 
+This will override the default behaviour of keys while in the fullscreen mode. ie:
+   droid.fullKeyOverride([24,25],True)
+ 
+This will override the default behaviour of the volume keys (codes 24 and 25) so that they do not actually adjust the volume. 
+Returns a list of currently overridden keycodes.
+fullQuery	Get Fullscreen Properties
+fullQueryDetail	Get fullscreen properties for a specific widget 
+id (String) id of layout widget
+fullSetList	Attach a list to a fullscreen widget 
+id (String) id of layout widget 
+list (JSONArray) List to set
+fullSetProperty	Set fullscreen widget property 
+id (String) id of layout widget 
+property (String) name of property to set 
+value (String) value to set property to
+fullSetTitle	Set the Full Screen Activity Title 
+title (String) Activity Title
+fullShow	Show Full Screen. 
+layout (String) String containing View layout 
+title (String) Activity Title (optional) 
+See wiki page for more detail.
+webViewShow	Display a WebView with the given URL. 
+url (String)
+wait (Boolean) block until the user exits the WebView (optional) 
+See wiki page for more detail.
+</page>
+
+
+
+<page link=docinfo> <h2>Document Information</h2>
+
+<p>This document is a part of the <i>SL4A Collection</i>, hosted at <c><a>sl4a.docs.pm</a></c>.</p>
+
+<h>Current Author</h>
+<p>This document is maintained by Carl Smith.</p>
+<stamp><c><a href=mailto:carl@docs.pm>carl@docs.pm</a></c></stamp>
+
+<h>Contributing Authors</h>
+<p>This document is derived from work by MeanEYE.rcf.</p>
+<stamp><c><a href=mailto:meaneye.rcf@gmail.com>meaneye.rcf@gmail.com</a></c></stamp>
+
+<h>Sponsorship</h>
+<p>The <i>SL4A Collection</i> is currently unsponsored <c>:(</c></p>
+<stamp><c><a>sponsor.docs.pm</a></c></stamp>
+
+<h>Licensing</h>
+<p>This document is an openly licensed, derivative work.</p>
+<stamp><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported</a></stamp>
+
+</page>
+
+<!-- D3 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="/site/main.js"></script>
+</body></html>

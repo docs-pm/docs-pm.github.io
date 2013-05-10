@@ -73,17 +73,19 @@ $(document).ready(function() {
 	$('boxes').children('box').attr('title', 'Toggle Boxes');
     $('blocks').children('pre').attr('title', 'Toggle Explanation');
     
-    $('sponsor').each(function () {
-        var inner = '<div class=ad>Pious Markoff<span style="color:black; font-size: 14px"><br>';
-        inner += 'CMS for Tech Writers<br><a href="http://pm.docs.pm">pm.docs.pm</a></span></div>';
-        inner += '<div class=ad>';
+    $('sponsor').each(function () {   
+        var inner = '<div class=ad>';
         inner += $(this).attr('maintitle');
         inner += '<span style="color:black; font-size:14px"><br>';
         inner += $(this).html() + '<br>';
         inner += '<a href="'+$(this).attr('href')+'">'
         inner += $(this).attr('link') + '</a></span></div>';
-        inner += '<div class=ad>GitHub Pages<span style="color:black; font-size: 14px"><br>'
-        inner += 'Social Coding<br><a href="http://github.io">github.io</a></span></div>'
+      	inner += '<div class=ad>Pious Markoff<span style="color:black;';
+        inner += 'font-size: 14px"><br>CMS for Tech Writers<br>';
+        inner += '<a href="http://pm.docs.pm">pm.docs.pm</a></span></div>';
+        inner += '<div class=ad>GitHub Pages<span style="color:black;';
+        inner += 'font-size: 14px"><br> Social Coding<br>';
+        inner += '<a href="http://github.io">github.io</a></span></div>';
         $(this).replaceWith(inner);
         });
     

@@ -162,13 +162,13 @@ Only the APIs to these functions are documented here. See the relevant docs for 
 
 <p>This method is used to add a new item to your application's <a>context menu</a>. Context menus are used primarily with <a>webviews</a> and are managed through the <a>Events Facade</a>.</p>
 
-<args>
+<boxes>
 <h>Required Arguments</h>
-<arg maintitle=1st subtitle=label type=string>The text that's displayed on the menu item when it's rendered.</arg>
-<arg maintitle=2nd subtitle=event type=string>A name for the <a>event</a> that will be generated whenever the user clicks on the menu item.</arg>
+<box maintitle=1st subtitle=label type=string>The text that's displayed on the menu item when it's rendered.</box>
+<box maintitle=2nd subtitle=event type=string>A name for the <a>event</a> that will be generated whenever the user clicks on the menu item.</box>
 <h>Optional Arguments</h>
-<arg maintitle=3rd subtitle=data type=object>Any data that's to be passed along with any <a>event</a> that's generated.</arg>
-</args>
+<box maintitle=3rd subtitle=data type=object>Any data that's to be passed along with any <a>event</a> that's generated.</box>
+</boxes>
 </page>
 
 
@@ -177,14 +177,14 @@ Only the APIs to these functions are documented here. See the relevant docs for 
 
 <p>This method adds a new item to your application's <a>options menu</a>. Option menus are managed through the <a>Events Facade</a>.</p>
 
-<args>
+<boxes>
 <h>Required Arguments</h>
-<arg maintitle=1st subtitle=label type=string>The text that's displayed on the menu item when it's rendered.</arg>
-<arg maintitle=2nd subtitle=event type=string>A name for the <a>event</a> that will be generated whenever the user clicks on the menu item.</arg>
+<box maintitle=1st subtitle=label type=string>The text that's displayed on the menu item when it's rendered.</box>
+<box maintitle=2nd subtitle=event type=string>A name for the <a>event</a> that will be generated whenever the user clicks on the menu item.</box>
 <h>Optional Arguments</h>
-<arg maintitle=3rd subtitle=data type=object>Any data that's to be passed along with any <a>event</a> that's generated.</arg>
-<arg maintitle=4th subtitle=icon type=string>The Android <a>system menu icon</a> to use when the menu item is rendered.</arg>
-</args>
+<box maintitle=3rd subtitle=data type=object>Any data that's to be passed along with any <a>event</a> that's generated.</box>
+<box maintitle=4th subtitle=icon type=string>The Android <a>system menu icon</a> to use when the menu item is rendered.</box>
+</boxes>
 
 <h>Example Code</h>
 
@@ -238,11 +238,11 @@ while True:
 <page link=dialogcreatealert> <h3 bind=droid.>dialogCreateAlert</h3>
 <p>This method creates an <a>alert dialog</a>. You can set a title and a message for the dialog when you call this method, and you can define a set of simple buttons for the user to respond with.</p>
 
-<args>
+<boxes>
 <h>Optional Arguments</h>
-<arg maintitle=1st subtitle=title type=string>The title to display on the alert box.</arg>
-<arg maintitle=2nd subtitle=message type=string>The message to display in the alert box</arg>
-</args>
+<box maintitle=1st subtitle=title type=string>The title to display on the alert box.</box>
+<box maintitle=2nd subtitle=message type=string>The message to display in the alert box</box>
+</boxes>
 
 <h>Example Code</h>
 
@@ -295,9 +295,6 @@ if response.has_key('which'):
 elif response.has_key('canceled'): print 'Surely you know if you like swords?'
 else: print 'Unknown response:', response
 </block>
-
-<p></p>
-
 </blocks>
 </page>
 
@@ -307,12 +304,12 @@ else: print 'Unknown response:', response
 
 <p>This method creates a <a>date picker dialog</a>. You can set the date that the dialog will begin at, otherwise it will default to January 1st 1970.</p>
 
-<args>
+<boxes>
 <h>Optional Arguments</h>
-<arg maintitle=1st subtitle=year type=int>Default = 1970</arg> 
-<arg maintitle=2nd subtitle=month type=int>Default = 1</arg> 
-<arg maintitle=3rd subtitle=day type=int>Default = 1</arg>
-</args>
+<box maintitle=1st subtitle=year type=int>Default = 1970</box> 
+<box maintitle=2nd subtitle=month type=int>Default = 1</box> 
+<box maintitle=3rd subtitle=day type=int>Default = 1</box>
+</boxes>
 
 </page>
 
@@ -432,7 +429,6 @@ See wiki page for more detail.
 
 <sponsor maintitle="Doc Sponsors" link=sponsor.docs.pm href=http://sponsor.docs.pm>Sponsorship Info</sponsor>
 </page>
-
 
 
 

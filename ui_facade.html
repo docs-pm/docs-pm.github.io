@@ -2,20 +2,19 @@
 
     <meta name="viewport" id="viewport"
         content="width=device-width, target-densitydpi=device-dpi,
-        initial-scale=1.0"
+        initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
         />
 
 <title>SL4A UI Facade</title>
 <script type="text/javascript" src="/site/hilighter/sh_main.js"></script>
 <script type="text/javascript" src="/site/hilighter/lang/sh_python.js"></script>
-<link rel="stylesheet" href="/site/hilighter/css/sh_print.css">
+<link rel="stylesheet" href="/hilighter/css/sh_print.css">
 <link rel='stylesheet' href='/site/main.css'>
 </head><body>
 
 
 
-<page link=homepage>
-<h1>SL4A: The User Interface Facade</h1>
+<page> <h1>SL4A: The User Interface Facade</h1>
 
 <h><a href=#introducingthefacade>Introducing the Facade</a></h>
 <p>A quick introduction to the User Interface Facade.</p>
@@ -27,7 +26,7 @@
 <p>A complete guide to the SL4A User Interface Facade's API.</p>
 
 <h><a href=#appendixa>Appendix A: Managing Menus</a></h>
-<p>A quick guide to adding context and options menus to your applications.</p>
+<p>An quick guide to adding context and options menus to your applications.</p>
 
 <h><a href=#appendixb>Appendix B: Quid Pro Quo</a></h>
 <p>A quick guide to using the standard dialogs, dialogs that block and wait for user input.</p>
@@ -39,8 +38,7 @@
 
 
 
-<page link=introducingthefacade>
-<h2>Introducing the Facade</h2>
+<page link=introducingthefacade> <h2>Introducing the Facade</h2>
 
 <p>The User Interface Facade is generally used to create native dialogs, such as alerts, spinners and progress bars. It supports a range of dialogs for getting user input, such as password input boxes and date pickers.</p>
 
@@ -297,13 +295,15 @@ if response.has_key('which'):
 elif response.has_key('canceled'): print 'Surely you know if you like swords?'
 else: print 'Unknown response:', response
 </block>
+
+<p></p>
+
 </blocks>
 </page>
 
 
 
-<page link=dialogcreatedatepicker>
-<h3 bind=droid.>dialogCreateDatePicker</h3>
+<page link=dialogcreatedatepicker> <h3 bind=droid.>dialogCreateDatePicker</h3>
 
 <p>This method creates a <a>date picker dialog</a>. You can set the date that the dialog will begin at, otherwise it will default to January 1st 1970.</p>
 
@@ -313,22 +313,17 @@ else: print 'Unknown response:', response
 <arg maintitle=2nd subtitle=month type=int>Default = 1</arg> 
 <arg maintitle=3rd subtitle=day type=int>Default = 1</arg>
 </args>
+
 </page>
 
 
 
-<page link=dialogcreatehorizontalprogress>
-<h3 bind=droid.>dialogCreateHorizontalProgress</h3>
-
-<p>This method creates a horizontal progress dialog.</p> 
-
-<args>
-<h>Optional Arguments</h>
-<arg maintitle=1st subtitle=title type=string>The title to display on the progress dialog box.</arg>
+<page>
+dialogCreateHorizontalProgress    Create a horizontal progress dialog. 
+title (String) (optional) 
 message (String) (optional) 
 maximum progress (Integer) (default=100)
-  </args>
-  dialogCreateInput	Create a text input dialog. 
+dialogCreateInput	Create a text input dialog. 
 title (String) title of the input box (default=Value) 
 message (String) message to display above the input box (default=Please enter value:) 
 defaultText (String) text to insert into the input box (optional) 
@@ -430,25 +425,16 @@ See wiki page for more detail.
 
 <page link=docinfo> <h2>Document Information</h2>
 
-<p>This document is a part of the <i>SL4A Collection</i>, hosted at <c><a>sl4a.docs.pm</a></c>.</p>
+<p>This scroll is part of the <i>SL4A Collection</i>, hosted at <c><a>sl4a.docs.pm</a></c>. It was authored and is maintained by <a href=mailto:carl@docs.pm>Carl Smith</a>, and derived from work by <a href=mailto:meaneye.rcf@gmail.com>MeanEYE.rcf</a>. These docs are free software ( <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported</a> ).
+</p>
 
-<h>Current Author</h>
-<p>This document is maintained by Carl Smith.</p>
-<stamp><c><a href=mailto:carl@docs.pm>carl@docs.pm</a></c></stamp>
-
-<h>Contributing Authors</h>
-<p>This document is derived from work by MeanEYE.rcf.</p>
-<stamp><c><a href=mailto:meaneye.rcf@gmail.com>meaneye.rcf@gmail.com</a></c></stamp>
-
-<h>Sponsorship</h>
 <p>The <i>SL4A Collection</i> is currently unsponsored <c>:(</c></p>
-<stamp><c><a>sponsor.docs.pm</a></c></stamp>
 
-<h>Licensing</h>
-<p>This document is an openly licensed, derivative work.</p>
-<stamp><a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported</a></stamp>
-
+<sponsor maintitle="Doc Sponsors" link=sponsor.docs.pm href=http://sponsor.docs.pm>Sponsorship Info</sponsor>
 </page>
+
+
+
 
 <!-- D3 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>

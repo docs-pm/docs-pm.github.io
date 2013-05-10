@@ -8,8 +8,8 @@ for (var i=0; i<es.length; i++){ e = es[i];
     if (val) { e.innerHTML = '<bind>'+val+'</bind>' + e.innerHTML }
     }
 
-// build up any arg elements
-es = document.getElementsByTagName('arg');
+// build up any box elements
+es = document.getElementsByTagName('box');
 for (var i=0; i<es.length; i++){ e = es[i];
 
     val = e.getAttribute('maintitle');
@@ -20,10 +20,7 @@ for (var i=0; i<es.length; i++){ e = es[i];
     
     val = e.getAttribute('type');
     if (val) { bar += ' <type>' + val + '</type> ' }
-    e.innerHTML = bar + ' </bar>' + '<p>' + e.innerHTML+ '</p>';
-    
-    val = e.getAttribute('deck');
-    if (val) { e.className = 'deck'+val }
+    e.innerHTML = bar + ' </bar>' + '<p>' + e.innerHTML+ '</p></box>';
     }
 
 // convert page link attribute values to internal links
@@ -57,9 +54,9 @@ $(document).ready(function() {
 	        }
 	    });
 	
-	// make arg boxes animated
-	$('args').children('arg').children('bar').click(function(event) {
-	    $(this).parent().parent().children('arg').children('p').slideToggle(150);
+	// make box boxes animated
+	$('boxes').children('box').children('bar').click(function(event) {
+	    $(this).parent().parent().children('box').children('p').slideToggle(150);
 	    });
 	
 	// build block elements
@@ -68,15 +65,28 @@ $(document).ready(function() {
 	    });
 	
 	// make example code animated
-	$('blocks').children('pre').click(function(event) {
+	$('blocks').children('pre').click(function() {
 	    $(this).parent().children(':not(pre)').slideToggle(150);
 	    });
 	
 	// add tooltips to stuff
-	$('args').children('arg').attr('title', 'Toggle Boxes');
+	$('boxes').children('box').attr('title', 'Toggle Boxes');
     $('blocks').children('pre').attr('title', 'Toggle Explanation');
     
-
+    $('sponsor').each(function () {
+        var inner = '<div class=ad>Pious Markoff<span style="color:black; font-size: 14px"><br>';
+        inner += 'CMS for Tech Writers<br><a href="http://pm.docs.pm">pm.docs.pm</a></span></div>';
+        inner += '<div class=ad>';
+        inner += $(this).attr('maintitle');
+        inner += '<span style="color:black; font-size:14px"><br>';
+        inner += $(this).html() + '<br>';
+        inner += '<a href="'+$(this).attr('href')+'">'
+        inner += $(this).attr('link') + '</a></span></div>';
+        inner += '<div class=ad>GitHub Pages<span style="color:black; font-size: 14px"><br>'
+        inner += 'Social Coding<br><a href="http://github.io">github.io</a></span></div>'
+        $(this).replaceWith(inner);
+        });
+    
     // highlight code examples 
     sh_highlightDocument();
     
@@ -102,7 +112,7 @@ $(document).ready(function() {
                     e.style.paddingLeft = ($(window).width() - 620) / 2;
                     });
             $('h1, h2, h3').css('margin-top', 0);
-            $('arg, pre, h1, h2, h3, note')
+            $('box, pre, h1, h2, h3, note')
                 .css('box-sizing', 'border-box')
                 .each( function (i, e) {
                     e.style.width = e.style.paddingLeft + 636;
@@ -112,7 +122,7 @@ $(document).ready(function() {
                 .each( function (i, e) {
                     e.style.width = e.style.paddingLeft + 620;
                     });
-            $('arg p').css('width', 635);
+            $('box p').css('width', 635);
             $('body').css('margin-bottom', 0);
             offset = -10;
             }

@@ -76,6 +76,7 @@ $(document).ready(function() {
 	$('args').children('arg').attr('title', 'Toggle Boxes');
     $('blocks').children('pre').attr('title', 'Toggle Explanation');
     
+
     // highlight code examples 
     sh_highlightDocument();
     

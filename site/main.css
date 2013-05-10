@@ -186,6 +186,7 @@ box {
 blocks p { display: none }
 
 .ad {
+  	width: 600;
     color: red;
     font-size: 16px;
     text-align: right;

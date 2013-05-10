@@ -46,7 +46,8 @@ h1, h2 {
 
 h1 {
     font-style: normal;
-    margin-right: -8px; margin-left: -8px; margin-top: 25px; margin-bottom: 40px;
+    margin-right: -8px; margin-left: -8px;
+  	margin-top: 25px; margin-bottom: 40px;
     padding-top: 18px; padding-bottom: 18px;
     background-image: -webkit-gradient(
 	    linear,
@@ -186,7 +187,7 @@ box {
 blocks p { display: none }
 
 .ad {
-  	width: 600;
+  	width: 620;
     color: red;
     font-size: 16px;
     text-align: right;

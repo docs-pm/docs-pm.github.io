@@ -44,7 +44,7 @@ h1 {
     font-style: normal;
     padding: 18 12 18 22;
     margin: 25 -8 40;
-    background-color: #DDD; 
+    background-color: #EEE; 
     }
     h1:after {
         content: 'docs.pm';
@@ -107,53 +107,53 @@ note {
     font-style: italic;
     font-family: Times New Roman;
     text-align: justify;
-    line-height: 26px;
+    line-height: 26;
     letter-spacing: 0.7pt;
     padding: 20 30;
-    margin: -8;
-    margin-top: 20px;
-    border: 1px solid #888;
-    box-shadow: inset 0px 0px 20px #EEE;
+    margin: 20 -8 -8;
+    border: 1 solid #888;
+    box-shadow: inset 0 0 20 #EEE;
     }
     note p {
-        line-height: 26px;
+        line-height: 26;
         }
     note c {
-        font-weight: 100; font-size: 18px;
+        font-size: 18;
+        font-weight: 100;
         }
     note:before {
         color: #888;
         content: '*';
-        font-size: 35px;
+        font-size: 35;
         font-weight: 900;
         font-style: normal;
         font-family: Droid Sans;
         line-height: 0;
-        margin-right: 10px;
-        vertical-align: -12px;
+        margin-right: 10;
+        vertical-align: -12;
         }
 
 box {
-    margin-top: 14px;
-    margin-right: -8px;
-    margin-left: -8px;
-    border: 1px solid #888;
-    box-shadow: 0px 13px 14px -12px #ADADAD;
+    margin-top: 14;
+    margin-right: -8;
+    margin-left: -8;
+    border: 1 solid #888;
+    box-shadow: 0 13 14 -12 #ADADAD;
     }
     box p {
         display: none;
         font-family: Droid Sans;
-        font-size: 15px;
+        font-size: 15;
         margin: 0;
-        padding: 12px;
-        border-top: 1px solid #AAA;
+        padding: 12;
+        border-top: 1 solid #AAA;
         }
     box bar {
-        font-size: 16px;
+        font-size: 16;
         font-weight: 900;
         background-color: #FDFDFD;
-        padding: 8px;
-        padding-top: 5px;
+        padding: 8;
+        padding-top: 5;
         }
         box bar:hover { cursor: pointer }
     box subtitle {
@@ -179,7 +179,7 @@ blocks p { display: none }
     padding-bottom: 5;
     margin-top: 25;
     margin-right: -8;
-    border-right: 2px solid #AAA;
+    border-right: 2 solid #AAA;
     }
     
 box, bar { font-family: Ubuntu Mono }

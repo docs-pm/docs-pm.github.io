@@ -166,6 +166,8 @@ box {
         font-weight: 100;
         font-style: italic;
         }
+        box subtitle:before { content: '(' }
+        box subtitle:after { content: ')' }
     box type {
         float: right;
         font-weight: 100;
@@ -190,4 +192,4 @@ blocks p { display: none }
     
 box, bar { font-family: Ubuntu Mono }
 scroll, page, page h, stamp, note, box, box bar, box h { display: block }
-h3 bind, box type:before, ul { color: #999 }
+h3 bind, box type:before, box subtitle:before, box subtitle:after, ul { color: #999 }

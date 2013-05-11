@@ -148,11 +148,12 @@ box {
         display: none;
         font-family: Droid Sans;
         font-size: 16;
+        line-height: 1.2;
         margin: 0;
         padding: 12;
         border-top: 1 solid #AAA;
         }
-    box p c { font-size: 16 }
+    box p c { font-size: 17 }
     box bar {
         font-size: 16;
         font-weight: 900;

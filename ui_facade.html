@@ -341,9 +341,19 @@ message (String) message to display above the input box (default=Please enter va
 defaultText (String) text to insert into the input box (optional)
 inputType (String) type of input data, ie number or text (optional)
 For inputType, see InputTypes. Some useful ones are text, number, and textUri. Multiple flags can be supplied, seperated by "|", ie: "textUri|textAutoComplete"
+</page>
+
+
+
+<page>
 dialogCreatePassword	Create a password input dialog.
 title (String) title of the input box (default=Password)
 message (String) message to display above the input box (default=Please enter password:)
+</page>
+
+
+
+<page>
 dialogCreateSeekBar	Create seek bar dialog.
 starting value (Integer) (default=50)
 maximum value (Integer) (default=100)
@@ -354,15 +364,35 @@ Will produce "dialog" events on change, containing:
 "which" = "seekbar"
 "fromuser" = true/false change is from user input
 Response will contain a "progress" element.
+</page>
+
+
+
+<page>
 dialogCreateSpinnerProgress	Create a spinner progress dialog.
 title (String) (optional)
 message (String) (optional)
 maximum progress (Integer) (default=100)
+</page>
+
+
+
+<page>
 dialogCreateTimePicker	Create time picker dialog.
 hour (Integer) (default=0)
 minute (Integer) (default=0)
 is24hour (Boolean) Use 24 hour clock (default=false)
+</page>
+
+
+
+<page>
 dialogDismiss	Dismiss dialog.
+</page>
+
+
+
+<page>
 dialogGetInput	Queries the user for a text input.
 title (String) title of the input box (default=Value)
 message (String) message to display above the input box (default=Please enter value:)
@@ -373,36 +403,111 @@ Example (python)
  droid=android.Android()
 
  print droid.dialogGetInput("Title","Message","Default").result
+</page>
 
+
+
+<page>
 dialogGetPassword	Queries the user for a password.
 title (String) title of the password box (default=Password)
 message (String) message to display above the input box (default=Please enter password:)
+</page>
+
+
+
+<page>
 dialogGetResponse	Returns dialog response.
+</page>
+
+
+
+<page>
 dialogGetSelectedItems	This method provides list of items user selected.
 returns: (Set) Selected items
+</page>
+
+
+
+<page>
 dialogSetCurrentProgress	Set progress dialog current value.
 current (Integer)
+</page>
+
+
+
+<page>
 dialogSetItems	Set alert dialog list items.
 items (JSONArray)
 This effectively creates list of options. Clicking on an item will immediately return an "item" element, which is the index of the selected item.
+</page>
+
+
+
+<page>
 dialogSetMaxProgress	Set progress dialog maximum value.
 max (Integer)
+</page>
+
+
+
+<page>
 dialogSetMultiChoiceItems	Set dialog multiple choice items and selection.
 items (JSONArray)
 selected (JSONArray) list of selected items (optional)
-This creates a list of check boxes. You can select multiple items out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use dialogGetSelectedItems() to find out what was selected.
+This creates a list of check boxes. You can select multiple items out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use 
+</page>
+
+
+
+<page>
+dialogGetSelectedItems() to find out what was selected.
+</page>
+
+
+
+<page>
 dialogSetNegativeButtonText	Set alert dialog button text.
 text (String)
+</page>
+
+
+
+<page>
 dialogSetNeutralButtonText	Set alert dialog button text.
 text (String)
+</page>
+
+
+
+<page>
 dialogSetPositiveButtonText	Set alert dialog positive button text.
 text (String)
+</page>
+
+
+
+<page>
 dialogSetSingleChoiceItems	Set dialog single choice items and selected item.
 items (JSONArray)
 selected (Integer) selected item index (default=0)
 This creates a list of radio buttons. You can select one item out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use dialogGetSelectedItems() to find out what was selected.
+</page>
+
+
+
+<page>
 dialogShow	Show dialog.
+</page>
+
+
+
+<page>
 fullDismiss	Dismiss Full Screen.
+</page>
+
+
+
+<page>
 fullKeyOverride	Override default key actions
 keycodes (JSONArray) List of keycodes to override
 enable (Boolean) Turn overriding or off (default=true)
@@ -411,28 +516,62 @@ This will override the default behaviour of keys while in the fullscreen mode. i
 
 This will override the default behaviour of the volume keys (codes 24 and 25) so that they do not actually adjust the volume.
 Returns a list of currently overridden keycodes.
+</page>
+
+
+
+<page>
 fullQuery	Get Fullscreen Properties
+</page>
+
+
+
+<page>
 fullQueryDetail	Get fullscreen properties for a specific widget
 id (String) id of layout widget
+</page>
+
+
+
+<page>
 fullSetList	Attach a list to a fullscreen widget
 id (String) id of layout widget
 list (JSONArray) List to set
+</page>
+
+
+
+<page>
 fullSetProperty	Set fullscreen widget property
 id (String) id of layout widget
 property (String) name of property to set
 value (String) value to set property to
+</page>
+
+
+
+<page>
 fullSetTitle	Set the Full Screen Activity Title
 title (String) Activity Title
+</page>
+
+
+
+<page>
 fullShow	Show Full Screen.
 layout (String) String containing View layout
 title (String) Activity Title (optional)
 See wiki page for more detail.
+</page>
+
+
+
+<page>
 webViewShow	Display a WebView with the given URL.
 url (String)
 wait (Boolean) block until the user exits the WebView (optional)
 See wiki page for more detail.
 </page>
-
 
 
 <page link=docinfo> <h2>Document Information</h2>

@@ -319,18 +319,18 @@ else: print 'Unknown response:', response
 
 <page link=dialogcreatehorizontalprogress> <h3 bind=droid.>dialogCreateHorizontalProgress</h3>
 
-<p>This method creates a horizontal progress dialog, a progress bar, which can be updated while it's being rendered using <a><c>dialogSetCurrentProgress</c></a>.</p> If you only need to express that the application is busy, consider using a spinner, with <a><c>dialogCreateSpinnerProgress</c></a>.
+<p>This method creates a horizontal progress dialog, a progress bar, which can be updated while it's being rendered by calling <a><c>dialogSetCurrentProgress</c></a>.
 
 <boxes>
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the progress dialog.</box>
 <box maintitle=2nd subtitle=message type=string>The message to display in the progress box.</box>
-<box maintitle=3rd subtitle=maximum progress type=int>The full extent of the process as an integer. You use <a><c>dialogSetCurrentProgress</c></a> to update the progress bar, passing an integer that represents a fraction of the maximum.
-<br><br>
-If you had eight packages to install, you may want to set maximum progress to <c>8</c> and increase current progress by one for each package installed. This argument defaults to <c>100</c>.</p>
-</box>
+<box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the process as an integer, which defaults to <c>100</c>.</box>
 </boxes>
 
+When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the dialog's maximum progress. For example, if you had eight packages to install, you may want to set the dialog's maximum progress to <c>8</c> and increment the progress bar for each package installed.</p>
+
+<note>If you only need to express that the application is busy, consider using a spinner, with <a><c>dialogCreateSpinnerProgress</c></a>.</note>
 </page>
 
 

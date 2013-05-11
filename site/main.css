@@ -27,7 +27,7 @@ pre {
     margin-left: -8;
     margin-right: -8;
     border: 1 solid #888;
-    box-shadow: 0 13 14 -12 #ADADAD }
+    box-shadow: 0 13px 14px -12px #ADADAD }
     blocks pre:hover { cursor: pointer }
 
 h1, h2 {

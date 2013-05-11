@@ -18,11 +18,7 @@
 
 
 <page> <h1>SL4A: The User Interface Facade</h1>
-{% highlight ruby linenos %}
-def foo
-  puts 'foo'
-end
-{% endhighlight %}
+
 <h><a href=#introducingthefacade>Introducing the Facade</a></h>
 <p>A quick introduction to the User Interface Facade.</p>
 
@@ -40,7 +36,6 @@ end
 
 <h><a href=#docinfo>Document Information</a></h>
 <p>Maintenance, providence, sponsorship and licensing details for this document.</p>
-
 </page>
 
 
@@ -293,9 +288,9 @@ droid.dialogDismiss()
 
 <block lang=python>
 if response.has_key('which'):
-    
+
     result = response['which']
-    
+
     if result == "positive": print 'Yay! I like swords too!'
     elif result == "negative": print 'Oh. How sad.'
 
@@ -313,8 +308,8 @@ else: print 'Unknown response:', response
 
 <boxes>
 <h>Optional Arguments</h>
-<box maintitle=1st subtitle=year type=int>Default = 1970</box> 
-<box maintitle=2nd subtitle=month type=int>Default = 1</box> 
+<box maintitle=1st subtitle=year type=int>Default = 1970</box>
+<box maintitle=2nd subtitle=month type=int>Default = 1</box>
 <box maintitle=3rd subtitle=day type=int>Default = 1</box>
 </boxes>
 
@@ -323,105 +318,105 @@ else: print 'Unknown response:', response
 
 
 <page>
-dialogCreateHorizontalProgress    Create a horizontal progress dialog. 
-title (String) (optional) 
-message (String) (optional) 
+dialogCreateHorizontalProgress    Create a horizontal progress dialog.
+title (String) (optional)
+message (String) (optional)
 maximum progress (Integer) (default=100)
-dialogCreateInput	Create a text input dialog. 
-title (String) title of the input box (default=Value) 
-message (String) message to display above the input box (default=Please enter value:) 
-defaultText (String) text to insert into the input box (optional) 
-inputType (String) type of input data, ie number or text (optional) 
+dialogCreateInput	Create a text input dialog.
+title (String) title of the input box (default=Value)
+message (String) message to display above the input box (default=Please enter value:)
+defaultText (String) text to insert into the input box (optional)
+inputType (String) type of input data, ie number or text (optional)
 For inputType, see InputTypes. Some useful ones are text, number, and textUri. Multiple flags can be supplied, seperated by "|", ie: "textUri|textAutoComplete"
-dialogCreatePassword	Create a password input dialog. 
-title (String) title of the input box (default=Password) 
+dialogCreatePassword	Create a password input dialog.
+title (String) title of the input box (default=Password)
 message (String) message to display above the input box (default=Please enter password:)
-dialogCreateSeekBar	Create seek bar dialog. 
-starting value (Integer) (default=50) 
-maximum value (Integer) (default=100) 
-title (String) 
-message (String) 
+dialogCreateSeekBar	Create seek bar dialog.
+starting value (Integer) (default=50)
+maximum value (Integer) (default=100)
+title (String)
+message (String)
 Will produce "dialog" events on change, containing:
 "progress" - Position chosen, between 0 and max
 "which" = "seekbar"
 "fromuser" = true/false change is from user input
 Response will contain a "progress" element.
-dialogCreateSpinnerProgress	Create a spinner progress dialog. 
-title (String) (optional) 
-message (String) (optional) 
+dialogCreateSpinnerProgress	Create a spinner progress dialog.
+title (String) (optional)
+message (String) (optional)
 maximum progress (Integer) (default=100)
-dialogCreateTimePicker	Create time picker dialog. 
-hour (Integer) (default=0) 
-minute (Integer) (default=0) 
+dialogCreateTimePicker	Create time picker dialog.
+hour (Integer) (default=0)
+minute (Integer) (default=0)
 is24hour (Boolean) Use 24 hour clock (default=false)
 dialogDismiss	Dismiss dialog.
-dialogGetInput	Queries the user for a text input. 
-title (String) title of the input box (default=Value) 
-message (String) message to display above the input box (default=Please enter value:) 
-defaultText (String) text to insert into the input box (optional) 
-The result is the user's input, or None (null) if cancel was hit. 
+dialogGetInput	Queries the user for a text input.
+title (String) title of the input box (default=Value)
+message (String) message to display above the input box (default=Please enter value:)
+defaultText (String) text to insert into the input box (optional)
+The result is the user's input, or None (null) if cancel was hit.
 Example (python)
  import android
  droid=android.Android()
- 
+
  print droid.dialogGetInput("Title","Message","Default").result
- 
-dialogGetPassword	Queries the user for a password. 
-title (String) title of the password box (default=Password) 
+
+dialogGetPassword	Queries the user for a password.
+title (String) title of the password box (default=Password)
 message (String) message to display above the input box (default=Please enter password:)
 dialogGetResponse	Returns dialog response.
-dialogGetSelectedItems	This method provides list of items user selected. 
+dialogGetSelectedItems	This method provides list of items user selected.
 returns: (Set) Selected items
-dialogSetCurrentProgress	Set progress dialog current value. 
+dialogSetCurrentProgress	Set progress dialog current value.
 current (Integer)
-dialogSetItems	Set alert dialog list items. 
-items (JSONArray) 
+dialogSetItems	Set alert dialog list items.
+items (JSONArray)
 This effectively creates list of options. Clicking on an item will immediately return an "item" element, which is the index of the selected item.
-dialogSetMaxProgress	Set progress dialog maximum value. 
+dialogSetMaxProgress	Set progress dialog maximum value.
 max (Integer)
-dialogSetMultiChoiceItems	Set dialog multiple choice items and selection. 
-items (JSONArray) 
-selected (JSONArray) list of selected items (optional) 
+dialogSetMultiChoiceItems	Set dialog multiple choice items and selection.
+items (JSONArray)
+selected (JSONArray) list of selected items (optional)
 This creates a list of check boxes. You can select multiple items out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use dialogGetSelectedItems() to find out what was selected.
-dialogSetNegativeButtonText	Set alert dialog button text. 
+dialogSetNegativeButtonText	Set alert dialog button text.
 text (String)
-dialogSetNeutralButtonText	Set alert dialog button text. 
+dialogSetNeutralButtonText	Set alert dialog button text.
 text (String)
-dialogSetPositiveButtonText	Set alert dialog positive button text. 
+dialogSetPositiveButtonText	Set alert dialog positive button text.
 text (String)
-dialogSetSingleChoiceItems	Set dialog single choice items and selected item. 
-items (JSONArray) 
-selected (Integer) selected item index (default=0) 
+dialogSetSingleChoiceItems	Set dialog single choice items and selected item.
+items (JSONArray)
+selected (Integer) selected item index (default=0)
 This creates a list of radio buttons. You can select one item out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use dialogGetSelectedItems() to find out what was selected.
 dialogShow	Show dialog.
 fullDismiss	Dismiss Full Screen.
-fullKeyOverride	Override default key actions 
-keycodes (JSONArray) List of keycodes to override 
-enable (Boolean) Turn overriding or off (default=true) 
+fullKeyOverride	Override default key actions
+keycodes (JSONArray) List of keycodes to override
+enable (Boolean) Turn overriding or off (default=true)
 This will override the default behaviour of keys while in the fullscreen mode. ie:
    droid.fullKeyOverride([24,25],True)
- 
-This will override the default behaviour of the volume keys (codes 24 and 25) so that they do not actually adjust the volume. 
+
+This will override the default behaviour of the volume keys (codes 24 and 25) so that they do not actually adjust the volume.
 Returns a list of currently overridden keycodes.
 fullQuery	Get Fullscreen Properties
-fullQueryDetail	Get fullscreen properties for a specific widget 
+fullQueryDetail	Get fullscreen properties for a specific widget
 id (String) id of layout widget
-fullSetList	Attach a list to a fullscreen widget 
-id (String) id of layout widget 
+fullSetList	Attach a list to a fullscreen widget
+id (String) id of layout widget
 list (JSONArray) List to set
-fullSetProperty	Set fullscreen widget property 
-id (String) id of layout widget 
-property (String) name of property to set 
+fullSetProperty	Set fullscreen widget property
+id (String) id of layout widget
+property (String) name of property to set
 value (String) value to set property to
-fullSetTitle	Set the Full Screen Activity Title 
+fullSetTitle	Set the Full Screen Activity Title
 title (String) Activity Title
-fullShow	Show Full Screen. 
-layout (String) String containing View layout 
-title (String) Activity Title (optional) 
+fullShow	Show Full Screen.
+layout (String) String containing View layout
+title (String) Activity Title (optional)
 See wiki page for more detail.
-webViewShow	Display a WebView with the given URL. 
+webViewShow	Display a WebView with the given URL.
 url (String)
-wait (Boolean) block until the user exits the WebView (optional) 
+wait (Boolean) block until the user exits the WebView (optional)
 See wiki page for more detail.
 </page>
 

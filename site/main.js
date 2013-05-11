@@ -49,25 +49,25 @@ $(document).ready(function() {
 	$('a[href^="#"]').addClass('glide');
 	$('.glide').click(function(event){		
 		if (offset !== false) {
-		    event.preventDefault();
-		    $('html,body').animate({scrollTop:$(this.hash).offset().top - offset}, 500);
-	        }
-	    });
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top - offset}, 500);
+            }
+        });
 	
 	// make box boxes animated
 	$('boxes').children('box').children('bar').click(function(event) {
-	    $(this).parent().parent().children('box').children('p').slideToggle(150);
-	    });
+        $(this).parent().parent().children('box').children('p').slideToggle(150);
+        });
 	
 	// build block elements
 	$('block').each(function () {
-	    $(this).replaceWith('<pre class=sh_'+$(this).attr('lang')+'>'+$(this).html()+'</pre>');
-	    });
+        $(this).replaceWith('<pre class=sh_'+$(this).attr('lang')+'>'+$(this).html()+'</pre>');
+        });
 	
 	// make example code animated
 	$('blocks').children('pre').click(function() {
-	    $(this).parent().children(':not(pre)').slideToggle(150);
-	    });
+        $(this).parent().children(':not(pre)').slideToggle(150);
+        });
 	
 	// add tooltips to stuff
 	$('boxes').children('box').attr('title', 'Toggle Boxes');
@@ -78,9 +78,9 @@ $(document).ready(function() {
         inner += $(this).attr('maintitle');
         inner += '<span style="color:black; font-size:14px"><br>';
         inner += $(this).html() + '<br>';
-        inner += '<a href="'+$(this).attr('href')+'">'
+        inner += '<a href="'+$(this).attr('href')+'">';
         inner += $(this).attr('link') + '</a></span></div>';
-      	inner += '<div class=ad>Pious Markoff<span style="color:black;';
+        inner += '<div class=ad>Pious Markoff<span style="color:black;';
         inner += 'font-size: 14px"><br>CMS for Tech Writers<br>';
         inner += '<a href="http://pm.docs.pm">pm.docs.pm</a></span></div>';
         inner += '<div class=ad>GitHub Pages<span style="color:black;';

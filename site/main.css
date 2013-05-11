@@ -44,7 +44,7 @@ h1 {
     font-style: normal;
     padding: 18 12 18 22;
     margin: 25 -8 40;
-    background-color: #F5F5F5; 
+    background-color: #FCFCFC; 
     }
     h1:after {
         content: 'docs.pm';

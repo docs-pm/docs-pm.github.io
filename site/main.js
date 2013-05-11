@@ -70,7 +70,7 @@ $(document).ready(function() {
         });
 	
 	// add tooltips to stuff
-	$('boxes').children('box').attr('title', 'Toggle Boxes');
+	$('boxes').children('box').children('bar').attr('title', 'Toggle Boxes');
     $('blocks').children('pre').attr('title', 'Toggle Explanation');
     
     $('sponsor').each(function () {   

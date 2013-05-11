@@ -9,7 +9,6 @@
 
 <script src="/site/hilighter/sh_main.js"></script>
 <script src="/site/hilighter/lang/sh_python.js"></script>
-
 <link rel="stylesheet" href="/site/hilighter/css/sh_print.css">
 <link rel='stylesheet' href='/site/main.css'>
 
@@ -325,10 +324,10 @@ else: print 'Unknown response:', response
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the progress dialog.</box>
 <box maintitle=2nd subtitle=message type=string>The message to display in the progress box.</box>
-<box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the process as an integer, which defaults to <c>100</c>.</box>
+<box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the process as an integer, which defaults to <c>100</c>.<br><br>
+When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the dialog's maximum progress. For example, if you had eight packages to install, you may want to set the dialog's maximum progress to <c>8</c>, then increment the progress bar for each package installed.</box>
 </boxes>
 
-<p>When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the dialog's maximum progress. For example, if you had eight packages to install, you may want to set the dialog's maximum progress to <c>8</c>, then increment the progress bar for each package installed.</p>
 
 <note>If you only need to express that the application is busy, consider using a spinner, with <a><c>dialogCreateSpinnerProgress</c></a>.</note>
 </page>

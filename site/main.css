@@ -5,8 +5,12 @@ body {
     }
 
 b { color: #333 }
-p { text-align: justify; line-height: 1.2 }
 ul { list-style-type: square }
+
+p {
+    text-align: justify;
+    line-height: 1.2
+    }
 
 a {
     color: #222;
@@ -107,7 +111,7 @@ note {
     font-style: italic;
     font-family: Times New Roman;
     text-align: justify;
-    line-height: 26;
+    line-height: 1.3;
     letter-spacing: 0.7pt;
     padding: 20 30;
     margin: 20 -8 -8;

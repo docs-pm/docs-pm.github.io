@@ -159,7 +159,7 @@ box {
         font-weight: 900;
         background-color: #FBFBFB;
         padding: 8;
-        padding-top: 6;
+        padding-top: 5;
         border-top: 1 solid white;
         }
         box bar:hover { cursor: pointer }

@@ -334,13 +334,18 @@ When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer tha
 </page>
 
 
-<page>
-dialogCreateInput	Create a text input dialog.
-title (String) title of the input box (default=Value)
-message (String) message to display above the input box (default=Please enter value:)
-defaultText (String) text to insert into the input box (optional)
-inputType (String) type of input data, ie number or text (optional)
-For inputType, see InputTypes. Some useful ones are text, number, and textUri. Multiple flags can be supplied, seperated by "|", ie: "textUri|textAutoComplete"
+<page link=dialogcreateinput><h3 bind=droid.>dialogCreateInput</h3>
+<p>This method creates a text input dialog.<p>
+<boxes>
+<box maintitle=1st subtitle=title type=string>The title to display on the input dialog, which defaults to <c>'Value'</c>.</box>
+<box maintitle=2nd subtitle=message type=string>The message to display above the input box, whic defaults to <c>'Please enter value:'</c>.</box>
+<box maintitle=3rd subtitle="default text" type=string> Any text that you want inserting into the input box, which defaults to an empty string.</box>
+<box maintitle=4th subtitle="input type" type=string>
+The <a><c>inputType</c></a> of data the dialog accepts.
+<br><br>
+Some useful types include <c>text</c>, <c>number</c>, and <c>textUri</c>. Multiple types can be given, seperated by a bar, as in <c>'textUri|textAutoComplete'</c>
+</box>
+</boxes>
 </page>
 
 
@@ -454,7 +459,7 @@ max (Integer)
 dialogSetMultiChoiceItems	Set dialog multiple choice items and selection.
 items (JSONArray)
 selected (JSONArray) list of selected items (optional)
-This creates a list of check boxes. You can select multiple items out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use 
+This creates a list of check boxes. You can select multiple items out of the list. A response will not be returned until the dialog is closed, either with the Cancel key or a button (positive/negative/neutral). Use
 </page>
 
 

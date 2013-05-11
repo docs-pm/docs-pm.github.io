@@ -166,8 +166,8 @@ box {
         font-weight: 100;
         font-family: Ubuntu Light;
         }
-        box subtitle:before { content: '(' }
-        box subtitle:after { content: ')' }
+        box subtitle:before { content: '( ' }
+        box subtitle:after { content: ' )' }
     box type {
         float: right;
         font-weight: 100;

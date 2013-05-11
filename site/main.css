@@ -1,6 +1,5 @@
 body {
-    margin: 0;
-    margin-bottom: 90;
+    margin: 0 0 90 0;
     overflow-x: hidden;
     background-color: #FDFDFD;
     }
@@ -35,7 +34,7 @@ h1, h2 {
     font-style: italic;
     font-family: Times New Roman;
     margin: 40 -8;
-    padding: 13 12 28 12;
+    padding: 18 12 18 12;
     background-color: white;
     border: 1 solid #888;
     box-shadow: 0 6 12 -6 #AAA;
@@ -44,8 +43,6 @@ h1, h2 {
 h1 {
     font-style: normal;
     margin: 25 -8 40;
-    padding-top: 18;
-    padding-bottom: 18;
     background-image: gradient(
 	    linear,
 	    left bottom,

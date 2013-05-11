@@ -150,7 +150,7 @@ box {
         font-size: 16;
         line-height: 1.3;
         margin: 0;
-        padding: 12;
+        padding: 12 14 14;
         border-top: 1 solid #AAA;
         }
     box p c { font-size: 18 }

@@ -34,14 +34,10 @@ h1, h2 {
     font-size: 25;
     font-style: italic;
     font-family: Times New Roman;
-    margin: -8;
-    margin-top: 40;
-    margin-bottom: 40;
-    padding: 12;
-    padding-top: 13;
-    padding-left: 28;
+    margin: 40 -8;
+    padding: 13 12 28 12;
     background-color: white;
-    border: 1px solid #888;
+    border: 1 solid #888;
     box-shadow: 0 6 12 -6 #AAA;
     }
 
@@ -67,8 +63,7 @@ h1 {
         font-style: italic;
         font-variant: normal;
         font-family: Droid Sans;
-        padding: 0;
-        padding-top: 28;
+        padding: 28 0 0 0;
         }
     
 h3 {
@@ -78,52 +73,52 @@ h3 {
     font-style: normal;
     font-variant: normal;
     font-family: Ubuntu Mono;
-    padding: 18 20 18;
+    padding: 18 20;
     margin: 30 -8 30;
     border-top: 1 solid #DDD;
     border-bottom: 1 solid #DDD;
     }
     h3 bind {
-        font-size: 12px;
+        font-size: 12;
         font-weight: 100;
         }
 
 h {
     color: #111;
-    font-size: 19px;
+    font-size: 19;
     font-weight: 100;
     font-family: Ubuntu Light;
     font-style: italic;
-    border-left: 3px solid #AAA;
-    margin-top: 50px;
-    padding-left: 20px;
+    border-left: 3 solid #AAA;
+    margin-top: 50;
+    padding-left: 20;
     }
 
-c { color: #111; font-size: 18px; font-family: Ubuntu Mono }
+c {
+    color: #111;
+    font-size: 18;
+    font-family: Ubuntu Mono
+    }
 
 page {
     font-family: Ubuntu Light;
-    width: 620px;
-    padding: 100px;
-    padding-top: 20px;
-    padding-bottom: 80px;
+    width: 620;
+    padding: 20 100 80;
     margin: auto;
     background-color: white;
-    border: 1px solid #888;
-    box-shadow: 0px 14px 18px -12px #777;
+    border: 1 solid #888;
+    box-shadow: 0 14 18 -12 #777;
     }
 
 note {
     color: #111;
-    font-size: 18px;
+    font-size: 18;
     font-style: italic;
     font-family: Times New Roman;
     text-align: justify;
     line-height: 26px;
     letter-spacing: 0.7pt;
-    padding: 30px;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20 30;
     margin: -8;
     margin-top: 20px;
     border: 1px solid #888;

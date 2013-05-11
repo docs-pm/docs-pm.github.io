@@ -41,7 +41,7 @@ h1, h2 {
     padding: 16 22;
     background-color: white;
     border: 1 solid #888;
-    box-shadow: 0 6 12 -6 #AAA;
+    box-shadow: 0 6px 12px -6px #AAA;
     }
 
 h1 {
@@ -102,7 +102,7 @@ page {
     margin: auto;
     background-color: white;
     border: 1 solid #888;
-    box-shadow: 0 14 18 -12 #777;
+    box-shadow: 0 14px 18px -12px #777;
     }
 
 note {
@@ -116,7 +116,7 @@ note {
     padding: 20 30;
     margin: 20 -8 -8;
     border: 1 solid #888;
-    box-shadow: inset 0 0 20 #EEE;
+    box-shadow: inset 0 0 20px #EEE;
     }
     note p {
         line-height: 26;
@@ -142,7 +142,7 @@ box {
     margin-right: -8;
     margin-left: -8;
     border: 1 solid #888;
-    box-shadow: 0 13 14 -12 #ADADAD;
+    box-shadow: 0 13px 14px -12px #ADADAD;
     }
     box p {
         display: none;

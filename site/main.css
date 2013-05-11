@@ -165,7 +165,7 @@ box {
     box subtitle {
         font-weight: 100;
         font-size: 14;
-        font-family: Ubuntu Sans;
+        font-family: Ubuntu Light;
         }
         box subtitle:before { content: '( ' }
         box subtitle:after { content: ' )' }

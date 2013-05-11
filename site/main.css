@@ -6,7 +6,7 @@ body {
     }
 
 b { color: #333 }
-p { text-align: justify; line-height: 22 }
+p { text-align: justify; line-height: 1.2 }
 ul { list-style-type: square }
 
 a {

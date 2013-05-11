@@ -328,7 +328,7 @@ else: print 'Unknown response:', response
 <box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the process as an integer, which defaults to <c>100</c>.</box>
 </boxes>
 
-<p>When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the dialog's maximum progress, so, for example, if you had eight packages to install, you may want to set the dialog's maximum progress to <c>8</c>, then increment the progress bar for each package installed.</p>
+<p>When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the dialog's maximum progress. For example, if you had eight packages to install, you may want to set the dialog's maximum progress to <c>8</c>, then increment the progress bar for each package installed.</p>
 
 <note>If you only need to express that the application is busy, consider using a spinner, with <a><c>dialogCreateSpinnerProgress</c></a>.</note>
 </page>

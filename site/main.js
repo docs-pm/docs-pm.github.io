@@ -55,8 +55,8 @@ $(document).ready(function() {
         });
 	
 	// make box boxes animated
-	$('boxes').children('box').children('bar').click(function(event) {
-        $(this).parent().parent().children('box').children('p').slideToggle(150);
+	$('boxes').children('box').children('bar').addClass('whitebar').click(function(event) {
+        $(this).parent().parent().children('box').children('p').slideToggle(150).toggleClass('whitebar');
         });
 	
 	// build block elements

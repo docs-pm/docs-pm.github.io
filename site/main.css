@@ -191,7 +191,9 @@ blocks p { display: none }
     margin-right: -8;
     border-right: 2 solid #AAA;
     }
-    
+
+.whitebar { background-color: white }
+
 box, bar { font-family: Ubuntu Mono }
 scroll, page, page h, stamp, note, box, box bar, box h { display: block }
 h3 bind, box type:before, box subtitle:before, box subtitle:after, ul { color: #999 }

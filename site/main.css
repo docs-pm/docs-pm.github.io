@@ -164,7 +164,8 @@ box {
         box bar:hover { cursor: pointer }
     box subtitle {
         font-weight: 100;
-        font-family: Ubuntu Light;
+        font-size: 14;
+        font-family: Droid Sans;
         }
         box subtitle:before { content: '( ' }
         box subtitle:after { content: ' )' }

@@ -324,7 +324,7 @@ else: print 'Unknown response:', response
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the progress dialog.</box>
 <box maintitle=2nd subtitle=message type=string>The message to display in the progress box.</box>
-<box maintitle=3rd subtitle=maximum_progress type=int>The full extent of the progress as an integer, which defaults to <c>100</c>.
+<box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the progress as an integer, which defaults to <c>100</c>.
 <br><br>
 When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the maximum progress. For example, if you had eight packages to install, you may want to set the maximum progress to <c>8</c>, then increment the progress bar for each package installed.</box>
 </boxes>
@@ -340,8 +340,8 @@ When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer tha
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the input dialog, which defaults to <c>'Value'</c>.</box>
 <box maintitle=2nd subtitle=message type=string>The message to display above the input box, whic defaults to <c>'Please enter value:'</c>.</box>
-<box maintitle=3rd subtitle=default_text type=string> Any text that you want inserting into the input box, which defaults to an empty string.</box>
-<box maintitle=4th subtitle=input_type type=string>
+<box maintitle=3rd subtitle="default text" type=string> Any text that you want inserting into the input box, which defaults to an empty string.</box>
+<box maintitle=4th subtitle="input type" type=string>
 The Android System <a><c>inputType</c></a> that the dialog accepts.
 <br><br>
 Some useful types include <c>text</c>, <c>number</c>, and <c>textUri</c>. Multiple types can be given, seperated by a bar, as in <c>'textUri|textAutoComplete'</c>.

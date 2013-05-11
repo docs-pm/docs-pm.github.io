@@ -324,8 +324,9 @@ else: print 'Unknown response:', response
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the progress dialog.</box>
 <box maintitle=2nd subtitle=message type=string>The message to display in the progress box.</box>
-<box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the process as an integer, which defaults to <c>100</c>.<br><br>
-When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the dialog's maximum progress. For example, if you had eight packages to install, you may want to set the dialog's maximum progress to <c>8</c>, then increment the progress bar for each package installed.</box>
+<box maintitle=3rd subtitle="maximum progress" type=int>The full extent of the process as an integer, which defaults to <c>100</c>.
+<br><br>
+When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the maximum progress. For example, if you had eight packages to install, you may want to set the maximum progress to <c>8</c>, then increment the progress bar for each package installed.</box>
 </boxes>
 
 

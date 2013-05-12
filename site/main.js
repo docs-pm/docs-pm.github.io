@@ -165,7 +165,7 @@ $(document).ready(function() {
         if (width < 685) {
             $('body').css('zoom', '90%');
             $('page').css('padding-left', ($(this).width()-556) / 2);
-            $('page').css('margin-top', -20);
+            $('page').css('margin-top', -40);
             $('p').css('text-align', 'left');
             offset = false;
             }

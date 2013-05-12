@@ -165,14 +165,15 @@ $(document).ready(function() {
         if (width < 685) {
             $('body').css('zoom', '90%');
             $('page').css('padding-left', ($(this).width()-556) / 2);
+            $('page').css('margin-top', 0);
             $('p').css('text-align', 'left');
-            $('h1, h2, h3').css('margin-top', 20);
             offset = false;
             }
         
         else {
             $('body').css('zoom', '100%');
             $('p').css('text-align', 'justify');
+            $('page').css('margin-top', 20);
             }
         
         }).resize();

@@ -166,6 +166,7 @@ $(document).ready(function() {
             $('body').css('zoom', '90%');
             $('page').css('padding-left', ($(this).width()-556) / 2);
             $('p').css('text-align', 'left');
+            $('h1, h2, h3').css('margin-top', 20);
             offset = false;
             }
         

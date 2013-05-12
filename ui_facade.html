@@ -320,6 +320,7 @@ else: print 'Unknown response:', response
 
 <p>This method creates a horizontal progress dialog, a progress bar, which can be updated while it's being rendered by calling <a><c>dialogSetCurrentProgress</c></a>.</p>
 
+<p>If you only need to express that the application is busy, consider using a spinner, with <a><c>dialogCreateSpinnerProgress</c></a>.</p>
 <boxes>
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the progress dialog.</box>
@@ -328,9 +329,6 @@ else: print 'Unknown response:', response
 <br><br>
 When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer that represents a fraction of the maximum progress. For example, if you had eight packages to install, you may want to set the maximum progress to <c>8</c>, then increment the progress bar for each package installed.</box>
 </boxes>
-
-
-<note>If you only need to express that the application is busy, consider using a spinner, with <a><c>dialogCreateSpinnerProgress</c></a>.</note>
 </page>
 
 

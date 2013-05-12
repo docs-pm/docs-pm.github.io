@@ -162,13 +162,7 @@ $(document).ready(function() {
             }
                 
         // mobile tweaks
-        if (width < 650) {
-            $('body').css('zoom', '80%');
-            $('page').css('padding-left', ($(this).width()-488) / 2);
-            offset = false;
-            }
-        
-        else if (width < 685) {
+        if (width < 685) {
             $('body').css('zoom', '90%');
             $('page').css('padding-left', ($(this).width()-556) / 2);
             $('p').css('text-align', 'left');

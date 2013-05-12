@@ -157,7 +157,7 @@ box {
     box bar {
         font-size: 16;
         font-weight: 900;
-        background-color: #FBFBFB;
+        background-color: #FDFDFD;
         padding: 8;
         padding-top: 5;
         border-top: 1 solid white;
@@ -191,8 +191,6 @@ blocks p { display: none }
     margin-right: -8;
     border-right: 2 solid #AAA;
     }
-
-.whitebar { background-color: white }
 
 box, bar { font-family: Ubuntu Mono }
 scroll, page, page h, stamp, note, box, box bar, box h { display: block }

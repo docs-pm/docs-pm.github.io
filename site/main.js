@@ -81,8 +81,7 @@ $(document).ready(function() {
         inner += '<a href="'+$(this).attr('href')+'">';
         inner += $(this).attr('link') + '</a></span></div>';
         inner += '<div class=ad>Pious Markoff<span style="color:black;';
-        inner += 'font-size: 14px"><br>CMS for Tech Writers<br>';
-        inner += '<a href="http://pm.docs.pm">pm.docs.pm</a></span></div>';
+        inner += 'font-size: 14px"><br>Clientside CMS</span></div>';
         inner += '<div class=ad>GitHub Pages<span style="color:black;';
         inner += 'font-size: 14px"><br> Social Coding<br>';
         inner += '<a href="http://github.io">github.io</a></span></div>';

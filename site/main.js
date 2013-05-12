@@ -108,8 +108,7 @@ $(document).ready(function() {
                     'margin-bottom': 0,
                     'margin-top': 0,
                     'border': 'none',
-                    'border-bottom': '1px solid #AAA',
-                    'box-shadow': '0 0 0 white'
+                    'border-bottom': '1px solid #AAA'
                     })
                 .each( function (i, e) {
                     e.style.paddingLeft = ($(window).width() - 620) / 2;
@@ -166,7 +165,7 @@ $(document).ready(function() {
         if (width < 685) {
             $('body').css('zoom', '90%');
             $('page').css('padding-left', ($(this).width()-556) / 2);
-            $('page').css({'margin-top': 0, 'padding-top': 25});
+            $('page').css({'margin-top': 10, 'padding-top': 10});
             $('p').css('text-align', 'left');
             offset = false;
             }
@@ -174,7 +173,7 @@ $(document).ready(function() {
         else {
             $('body').css('zoom', '100%');
             $('p').css('text-align', 'justify');
-            $('page').css({'margin-top': 20, 'padding-top': 20, 'box-shadow': '0 14px 18px -12px #777'});
+            $('page').css({'margin-top': 20, 'padding-top': 20});
             }
         
         }).resize();

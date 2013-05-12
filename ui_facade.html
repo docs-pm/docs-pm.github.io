@@ -124,10 +124,10 @@ Only the APIs to these functions are documented here. See the relevant docs for 
     <li><a href=#clearcontextmenu><c>clearContextMenu</c></a></li>
     <li><a href=#clearoptionsmenu><c>clearOptionsMenu</c></a></li>
     <li><a href=#dialogcreatealert><c>dialogCreateAlert</c></a></li>
-    <li><a><c>dialogCreateDatePicker</c></a></li>
-    <li><a><c>dialogCreateHorizontalProgress</c></a></li>
-    <li><a><c>dialogCreateInput</c></a></li>
-    <li><a><c>dialogCreatePassword</c></a></li>
+    <li><a href=#dialogcreatedatepicker><c>dialogCreateDatePicker</c></a></li>
+    <li><a href=#dialogcreatehorizontalprogress><c>dialogCreateHorizontalProgress</c></a></li>
+    <li><a href=#dialogcreateinput><c>dialogCreateInput</c></a></li>
+    <li><a href=#dialogcreatepassword><c>dialogCreatePassword</c></a></li>
     <li><a><c>dialogCreateSeekBar</c></a></li>
     <li><a><c>dialogCreateSpinnerProgress</c></a></li>
     <li><a><c>dialogCreateTimePicker</c></a></li>
@@ -332,16 +332,15 @@ When you call <a><c>dialogSetCurrentProgress</c></a>, you pass in an integer tha
 </page>
 
 
-<page link=dialogcreateinput><h3 bind=droid.>dialogCreateInput</h3>
-<p>This method creates a text input dialog.</p>
+<page link=dialogcreateinput> <h3 bind=droid.>dialogCreateInput</h3>
+<p>This method creates a text input dialog, which can have an <a>Input Type</a>.</p>
 <boxes>
 <h>Optional Arguments</h>
 <box maintitle=1st subtitle=title type=string>The title to display on the input dialog, which defaults to <c>'Value'</c>.</box>
 <box maintitle=2nd subtitle=message type=string>The message to display above the input box, whic defaults to <c>'Please enter value:'</c>.</box>
 <box maintitle=3rd subtitle="default text" type=string> Any text that you want inserting into the input box, which defaults to an empty string.</box>
 <box maintitle=4th subtitle="input type" type=string>
-The <a>Input Type</a> that the dialog accepts, i.e. <c>text</c> or <c>number</c>.
-<br><br>
+The <a>Input Type</a> that the dialog accepts, i.e. <c>text</c> or <c>number</c>.<br><br>
 Multiple types can be given, seperated by a bar, as in <c>'textUri|textAutoComplete'</c>.
 </box>
 </boxes>
@@ -349,10 +348,15 @@ Multiple types can be given, seperated by a bar, as in <c>'textUri|textAutoCompl
 
 
 
-<page>
-dialogCreatePassword	Create a password input dialog.
-title (String) title of the input box (default=Password)
-message (String) message to display above the input box (default=Please enter password:)
+<page link=dialogcreatepassword> <h3 bind=droid.>dialogCreatePassword</h3>
+<p>This method creates a password input dialog.</p>
+<boxes>
+<h>Optional Arguments</h>
+<box maintitle=1st subtitle=title type=string>
+The title to display on the password input box, which defaults to <c>'Password'</c>.</box>
+<box maintitle=2nd subtitle=message type=string>
+The message to display above the password input box, which defaults to <c>'Please enter password:'</c></box>
+</boxes>
 </page>
 
 

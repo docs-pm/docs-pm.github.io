@@ -109,7 +109,7 @@ $(document).ready(function() {
                     'margin-top': 0,
                     'border': 'none',
                     'border-bottom': '1px solid #AAA',
-                    'box-shadow': 'none'
+                    'box-shadow': '0 0 0 white'
                     })
                 .each( function (i, e) {
                     e.style.paddingLeft = ($(window).width() - 620) / 2;

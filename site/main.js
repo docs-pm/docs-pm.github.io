@@ -108,7 +108,8 @@ $(document).ready(function() {
                     'margin-bottom': 0,
                     'margin-top': 0,
                     'border': 'none',
-                    'border-bottom': '1px solid #AAA'
+                    'border-bottom': '1px solid #AAA',
+                    'box-shadow': 'none'
                     })
                 .each( function (i, e) {
                     e.style.paddingLeft = ($(window).width() - 620) / 2;
@@ -173,7 +174,7 @@ $(document).ready(function() {
         else {
             $('body').css('zoom', '100%');
             $('p').css('text-align', 'justify');
-            $('page').css({'margin-top': 20, 'padding-top': 20});
+            $('page').css({'margin-top': 20, 'padding-top': 20, 'box-shadow': '0 14px 18px -12px #777'});
             }
         
         }).resize();
